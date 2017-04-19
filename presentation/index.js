@@ -17,10 +17,11 @@ import {
     List,
     ListItem,
     S,
-    Fit,
     Fill
 } from "spectacle"
-import CodeSlide from "spectacle-code-slide"
+import CodeSlide from "../code-slide"
+import "prismjs"
+import "prismjs/components/prism-typescript"
 
 // Import image preloader util
 import preloader from "spectacle/lib/utils/preloader"
@@ -207,18 +208,20 @@ Object rest/spread
             </Layout>
         </Slide>
 
-        <Slide transition={["fade"]} bgColor="primary">
-            <Heading>Type guards recap</Heading>
+        <CodeSlide
+            transition={[]}
+            lang="ts"
+            code={require("raw-loader!../assets/type-guards.ts")}
+            ranges={[
+                { loc: [0, 1], title: "Type guards recap", note: "A union type" },
+                { loc: [2, 3], title: "Type guards recap", note: "Check the type" },
+                { loc: [3, 4], title: "Type guards recap", note: "foo is a number" },
+                { loc: [5, 6], title: "Type guards recap", note: "foo is a function" }
+            ]}
+        />
 
-            <CodeSlide
-              transition={[]}
-              lang="js"
-              code={require("raw!../assets/code.example")}
-              ranges={[
-                /*{ loc: [0, 270], title: "Walking through some code" },
-                { loc: [0, 1], title: "The Beginning" },*/
-              ]}
-            />
+        <Slide transition={["fade"]} bgColor="primary">
+            <Text>Test</Text>
         </Slide>
     </Deck>
 )
