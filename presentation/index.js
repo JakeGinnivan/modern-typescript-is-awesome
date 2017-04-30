@@ -63,6 +63,31 @@ const render = () => (
             <Text size={6}>Seven West Media</Text>
         </Slide>
 
+        <Slide transition={["fade"]} bgColor="primary" notes={`Why not start with TypeScript?
+JSX Support
+< TypeScript 1.8 module systems didn't work with CommonJS that well
+Webpack Loader imaturity
+Only basic linting support
+Object rest/spread
+Salsa language service
+`}
+        >
+            <Heading textColor="tertiary" size={3} margin="0 0 50px 0">TypeScript at SWM</Heading>
+            <Appear><Text>Universal React/Redux with WebPack</Text></Appear>
+            <Appear><Text>Started with Babel/ES6</Text></Appear>
+            <Appear><Text>Converted to TypeScript after launch</Text></Appear>
+
+            <Appear><Text margin="30px 0 0 0">Why?</Text></Appear>
+        </Slide>
+
+        <Slide transition={["zoom"]} bgColor="primary">
+            <Heading size={1} fill caps textColor="tertiary">
+                TypeScript introduction
+            </Heading>
+
+            <Text>Demo</Text>
+        </Slide>
+
         <Slide transition={["fade"]} bgColor="tertiary">
             <Heading size={1} textColor="primary" caps margin="0 0 10% 0">Agenda</Heading>
             <Appear><Text size={2} textColor="secondary" margin="4% 0 0">Why TypeScript?</Text></Appear>
@@ -88,7 +113,7 @@ const render = () => (
             </Appear>
 
             <Appear>
-                <Text textColor="blue"><S type="underline">https://channel9.msdn.com/Events/Lang-NEXT/Lang-NEXT-2012/Panel-Web-and-Cloud-Programming</S></Text>
+                <Text textColor="white" textSize="1.1rem" margin="50px 0 0 0"><S type="underline">https://channel9.msdn.com/Events/Lang-NEXT/Lang-NEXT-2012/Panel-Web-and-Cloud-Programming</S></Text>
             </Appear>
         </Slide>
 
@@ -133,32 +158,6 @@ Goal was to drop understanding to 65%, 20% for existing features and 15% on new 
             </List>
         </Slide>
 
-        <Slide transition={["fade"]} bgColor="primary" notes={`Why not start with TypeScript?
-JSX Support
-< TypeScript 1.8 module systems didn't work with CommonJS that well
-Webpack Loader imaturity
-Only basic linting support
-Object rest/spread
-`}
-        >
-            <Heading textColor="tertiary">TypeScript at SWM</Heading>
-            <Text>Started with Babel/ES6</Text>
-            <Appear><Text>Converted to TypeScript after launch</Text></Appear>
-
-            <Appear><Text margin="30px 0 0 0">Why?</Text></Appear>
-        </Slide>
-
-        <Slide transition={["zoom"]} bgColor="primary">
-            <Heading size={1} fill caps textColor="tertiary">
-                TypeScript introduction
-            </Heading>
-
-            <Text>Demo</Text>
-
-            Union types
-        </Slide>
-
-
         <Slide transition={["zoom"]} bgColor="primary">
             <Heading size={1} fill caps textColor="tertiary">
                 Modern TypeScript (>2.0)
@@ -173,7 +172,7 @@ Object rest/spread
 
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary" notes="Responsible for quicksort amongst other things">
             <BlockQuote>
-                <Quote style={{ fontSize: "2rem" }}>I call it my billion-dollar mistake. It was the invention of the null reference in 1965. At that time, I was designing the first comprehensive type system for references in an object oriented language (ALGOL W). My goal was to ensure that all use of references should be absolutely safe, with checking performed automatically by the compiler. But I couldn't resist the temptation to put in a null reference, simply because it was so easy to implement. This has led to innumerable errors, vulnerabilities, and system crashes, which have probably caused a billion dollars of pain and damage in the last forty years.</Quote>
+                <Quote style={{ fontSize: "2rem" }}>I call it my billion-dollar mistake. It was the invention of the null reference in 1965. At that time, I was designing the first comprehensive type system for references in an object oriented language (ALGOL W). My goal was to ensure that all use of references should be absolutely safe, with checking performed automatically by the compiler. But I couldn&#39;t resist the temptation to put in a null reference, simply because it was so easy to implement. This has led to innumerable errors, vulnerabilities, and system crashes, which have probably caused a billion dollars of pain and damage in the last forty years.</Quote>
                 <Cite>Tony Hoare</Cite>
             </BlockQuote>
         </Slide>
@@ -191,18 +190,18 @@ Object rest/spread
                 <Fill>
                     <Heading textSize={32}>TypeScript 1.x</Heading>
                     <Text margin="20px 0 0 0" textSize={18}>All types can be undefined</Text>
-                    <Text margin="20px 0 0 0" textSize={18}><Code textSize={18}>const x: number = undefined</Code> &lt;-- error</Text>
+                    <Text margin="20px 0 0 0" textSize={18}><Code textSize={18}>const x: number = undefined</Code> &lt;-- OK</Text>
                 </Fill>
                 </Appear>
 
                 <Appear>
                 <Fill>
                     <Heading textSize={32}>TypeScript 2.x</Heading>
-                    <Text margin="20px 0 0 0" textSize={18}><Code textSize={18}>--strictNullCheck introduced</Code></Text>
-                    <Text margin="20px 0 0 0" textSize={18}>Removes undefined from all types</Text>
-                    <Text margin="20px 0 0 0" textSize={18}><Code textSize={18}>null</Code> &amp; <Code textSize={18}>undefined</Code> now are unary types</Text>
-                    <Text margin="20px 0 0 0" textSize={18}><Code textSize={18}>const x: number = undefined</Code> &lt;-- error</Text>
-                    <Text margin="20px 0 0 0" textSize={16}><Code textSize={16}>const x: number | undefined = undefined</Code> &lt;-- OK</Text>
+                    <Appear><Text margin="20px 0 0 0" textSize={18}><Code textSize={18}>--strictNullCheck</Code> introduced</Text></Appear>
+                    <Appear><Text margin="20px 0 0 0" textSize={18}>Removes undefined from all types</Text></Appear>
+                    <Appear><Text margin="20px 0 0 0" textSize={18}><Code textSize={18}>null</Code> &amp; <Code textSize={18}>undefined</Code> now are unary types</Text></Appear>
+                    <Appear><Text margin="20px 0 0 0" textSize={18}><Code textSize={18}>const x: number = undefined</Code> &lt;-- error</Text></Appear>
+                    <Appear><Text margin="20px 0 0 0" textSize={16}><Code textSize={16}>const x: number | undefined = undefined</Code> &lt;-- OK</Text></Appear>
                 </Fill>
                 </Appear>
             </Layout>
@@ -211,17 +210,25 @@ Object rest/spread
         <CodeSlide
             transition={[]}
             lang="ts"
-            code={require("raw-loader!../assets/type-guards.ts")}
+            code={require("raw-loader!../assets/type-guards.tsx")}
             ranges={[
-                { loc: [0, 1], title: "Type guards recap", note: "A union type" },
-                { loc: [2, 3], title: "Type guards recap", note: "Check the type" },
-                { loc: [3, 4], title: "Type guards recap", note: "foo is a number" },
-                { loc: [5, 6], title: "Type guards recap", note: "foo is a function" }
+                { loc: [0, 0], title: "Type guards recap" },
+                { loc: [4, 5], note: "A union type" },
+                { loc: [7, 8], note: "Check the type" },
+                { loc: [8, 9], note: "heading is a string" },
+                { loc: [12, 14], note: "heading is an object" }
             ]}
         />
 
         <Slide transition={["fade"]} bgColor="primary">
-            <Text>Test</Text>
+            <Heading size={2} fill caps textColor="tertiary">
+                Descriminated Unions
+            </Heading>
+
+
+            <Text textColor="secondary" size={3} margin="60px 0 0 0">
+                Demo
+            </Text>
         </Slide>
     </Deck>
 )
