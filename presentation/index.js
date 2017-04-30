@@ -6,6 +6,7 @@ import {
     BlockQuote,
     Cite,
     Code,
+    CodePane,
     Deck,
     Heading,
     Quote,
@@ -212,23 +213,129 @@ Goal was to drop understanding to 65%, 20% for existing features and 15% on new 
             lang="ts"
             code={require("raw-loader!../assets/type-guards.tsx")}
             ranges={[
-                { loc: [0, 0], title: "Type guards recap" },
+                { loc: [0, 0], title: "Type guards (pre 2.0)" },
                 { loc: [4, 5], note: "A union type" },
                 { loc: [7, 8], note: "Check the type" },
                 { loc: [8, 9], note: "heading is a string" },
-                { loc: [12, 14], note: "heading is an object" }
+                { loc: [10, 15], note: "heading is a HeadingWithStyle" }
             ]}
         />
 
         <Slide transition={["fade"]} bgColor="primary">
-            <Heading size={2} fill caps textColor="tertiary">
-                Descriminated Unions
+            <Heading size={3} fill caps textColor="tertiary">
+                TypeScript 2.0 type guard improvements
             </Heading>
 
 
-            <Text textColor="secondary" size={3} margin="60px 0 0 0">
+            <Text textColor="secondary" size={4} margin="60px 0 0 0">
                 Demo
             </Text>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+            <Heading size={3} fill caps textColor="tertiary">
+                What we saw
+            </Heading>
+
+            <List>
+                <Appear><ListItem>Control flow type analysis</ListItem></Appear>
+                <Appear><ListItem>Underpins the strict null check</ListItem></Appear>
+                <Appear><ListItem>Type narrowing</ListItem></Appear>
+                <Appear><ListItem>Tagged unions</ListItem></Appear>
+            </List>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+            <Heading size={3} fill caps textColor="tertiary">
+                Down level async/await
+            </Heading>
+
+            <Text textColor="secondary" size={4} margin="60px 0 0 0">
+                Demo
+            </Text>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+            <Heading size={3} fill caps textColor="tertiary">
+                What we saw
+            </Heading>
+
+            <List>
+                <Appear><ListItem>Async / await</ListItem></Appear>
+                <Appear><ListItem>Control API usage with lib</ListItem></Appear>
+            </List>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+            <Heading size={3} fill caps textColor="tertiary">
+                Going nuts with typings
+            </Heading>
+
+            <Text textColor="secondary" size={4} margin="60px 0 0 0">
+                Demo
+            </Text>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+            <Heading size={3} fill caps textColor="tertiary">
+                What we saw
+            </Heading>
+
+            <List>
+                <Appear><ListItem>Generics</ListItem></Appear>
+                <Appear><ListItem>Indexed/Mapped types</ListItem></Appear>
+            </List>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+            <Heading size={3} fill caps textColor="tertiary">
+                Other useful types
+            </Heading>
+
+            <CodePane
+                lang="ts"
+                source={require("raw-loader!../assets/other-useful-types.ts")}
+                margin="20px auto"
+            />
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+            <Heading size={3} fill caps textColor="tertiary">
+                TypeScript definition files
+            </Heading>
+
+            <Text textColor="secondary" size={4} margin="60px 0 0 0">
+                Demo
+            </Text>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+            <Heading size={2} textColor="tertiary" caps margin="0 0 100px 0">TypeScript at scale</Heading>
+
+            <List>
+                <Appear><ListItem>Project wide refactoring</ListItem></Appear>
+                <Appear><ListItem>Much greater code understanding</ListItem></Appear>
+                <Appear><ListItem>Moves most errors to compile time</ListItem></Appear>
+                <Appear><ListItem>179 files changed, 2577 insertions(+), 3737 deletions(-)</ListItem></Appear>
+            </List>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+            <Heading size={2} textColor="tertiary" caps margin="0 0 100px 0">Getting started</Heading>
+
+            <Text textColor="secondary" size={4} margin="60px 0 0 0">
+                https://www.typescriptlang.org/
+            </Text>
+        </Slide>
+
+        <Slide transition={["zoom"]} bgColor="primary">
+            <Heading size={1} fill caps textColor="tertiary">
+                Modern TypeScript is awesome!!
+            </Heading>
+            <Text margin="80px 0 0" textColor="secondary" size={4} bold>
+                Jake Ginnivan
+            </Text>
+            <Text size={6}>@jakeginnivan | jake@ginnivan.net</Text>
         </Slide>
     </Deck>
 )
