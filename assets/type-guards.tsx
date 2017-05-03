@@ -10,7 +10,7 @@ export default (heading: Heading) => {
     } else {
         return (
             <h1 className={heading.className}>
-                {heading}
+                {heading.text}
             </h1>
         )
     }
